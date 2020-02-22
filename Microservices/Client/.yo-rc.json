@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "br.com.fashionspoint.microservice",
+      "nativeLanguage": "pt-br"
+    },
+    "jhipsterVersion": "6.7.1",
+    "applicationType": "microservice",
+    "baseName": "Client",
+    "packageName": "br.com.fashionspoint.microservice",
+    "packageFolder": "br/com/fashionspoint/microservice",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YjM5OTZlNWE3N2E3NjQ4MzlkZTVlOTMwZmZjMjlhZGVkN2VlYmI4ZGUzN2VjMzdlY2NhZDQxOTYxZTYwNTFmMTM3M2ZlYjQzNzQ4NTM2NDdlNTRmN2I2Yzg2MTY1ZWFhYWE5ZmUyNTFkOTA4YmVmYWM1NDQzMTJhYzU2NjRjN2M=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1582329629509,
+    "testFrameworks": ["gatling", "cucumber"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "pt-br",
+    "languages": ["pt-br", "en"],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
