@@ -41,7 +41,7 @@ spring:
   devtools:
     restart:
       enabled: true
-      additional-exclude: static/**
+      additional-exclude: static/**,.h2.server.properties
     livereload:
       enabled: false # we use Webpack dev server + BrowserSync for livereload
   jackson:
@@ -49,17 +49,15 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost:3306/Client?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
-    username: root
+    url: jdbc:h2:file:./target/h2db/db/client;DB_CLOSE_DELAY=-1
+    username: Client
     password:
     hikari:
       poolName: Hikari
       auto-commit: false
-      data-source-properties:
-        cachePrepStmts: true
-        prepStmtCacheSize: 250
-        prepStmtCacheSqlLimit: 2048
-        useServerPrepStmts: true
+  h2:
+    console:
+      enabled: false
   jpa:
     show-sql: true
     properties:
@@ -130,7 +128,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
-        base64-secret: YjM5OTZlNWE3N2E3NjQ4MzlkZTVlOTMwZmZjMjlhZGVkN2VlYmI4ZGUzN2VjMzdlY2NhZDQxOTYxZTYwNTFmMTM3M2ZlYjQzNzQ4NTM2NDdlNTRmN2I2Yzg2MTY1ZWFhYWE5ZmUyNTFkOTA4YmVmYWM1NDQzMTJhYzU2NjRjN2M=
+        base64-secret: Y2Y5NDJmZmIzNmFkNWQ4MzlmNDU5MzViN2FlOGRkMDVmNjZkOTc4M2QwZmI0M2ViYmQxNjA2OTE3M2MyNjdlMmI5MjFmNDM0ZDg4YmIxMzhkY2ZkYzZhOGQxYTMzYmUyNjQxY2U3ZmRiMjg2NDVkNTgzMGZkZTAxZDFjMDJjNDU=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
