@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "br.com.fashionspoint.gateway",
+      "nativeLanguage": "pt-br"
+    },
+    "jhipsterVersion": "6.7.1",
+    "applicationType": "gateway",
+    "baseName": "Gateway",
+    "packageName": "br.com.fashionspoint.gateway",
+    "packageFolder": "br/com/fashionspoint/gateway",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NDA4M2U0MjYyMzhhOTczYTBiZGNjOTNlMGJmZjQ2NWViYjc4NmRkYTA0ZGUwYzNkNzJkYjY0OTE0YmU5NWQ3ZDY1NDAzZjE3OGZhMmEzYTVhNTExMTA0Zjk3YjU4YzdiOWMyNmQyNTI3NmI1MWRhMTJlYWRlMzliZThiZDg3YzY=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1582433293881,
+    "testFrameworks": ["gatling", "cucumber", "protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "pt-br",
+    "languages": ["pt-br", "en"],
+    "blueprints": []
+  }
+}
