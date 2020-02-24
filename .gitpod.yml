@@ -5,7 +5,7 @@ image:
 
 tasks:
  - command: | 
-           cd /workspace/Fashions_Point_Spring/Registry Server
+           cd /workspace/Fashions_Point_Spring/RegistryServer
            java -jar jhipster-registry-6.1.1.jar --spring.security.user.password=admin --jhipster.security.authentication.jwt.secret=my-secret-key-which-should-be-changed-in-production-and-be-base64-encoded --spring.cloud.config.server.composite.0.type=native --spring.cloud.config.server.composite.0.search-locations=file:./central-config 
  - command: mysql -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD ('Root123@');"
  
