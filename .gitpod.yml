@@ -6,7 +6,8 @@ image:
 tasks:
   
  - command: mysql -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD ('Root123@');"
- 
+ - command: cd /home/Fashions_Point_Spring/Registry_Server
+
   
 
 
