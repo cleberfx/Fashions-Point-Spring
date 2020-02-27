@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 	
 RUN wget -qO - https://packages.confluent.io/deb/5.4/archive.key | sudo apt-key add -
 RUN sudo add-apt-repository "deb [arch=amd64] https://packages.confluent.io/deb/5.4 stable main"
-RUN sudo apt-get update && sudo apt-get install confluent-platform-oss-2.11
+RUN sudo apt-get update && sudo apt-get install confluent-platform-oss-2.12
 	
 
 USER gitpod
