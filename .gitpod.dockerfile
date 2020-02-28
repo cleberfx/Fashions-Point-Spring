@@ -31,9 +31,10 @@ RUN apt-get update && \
 	
 	
 	
-RUN wget https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh/archive.key
-RUN sudo apt-key add archive.key
-RUN sudo add-apt-repository 'deb https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh wheezy-cdh5 contribdeb-src https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh wheezy-cdh5 contrib'
+RUN wget https://archive.cloudera.com/cdh5/one-click-install/trusty/amd64/cdh5-repository_1.0_all.deb
+RUN sudo dpkg -i cdh5-repository_1.0_all.deb
+#RUN sudo apt-key add archive.key
+#RUN sudo add-apt-repository 'deb https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh wheezy-cdh5 contribdeb-src https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh wheezy-cdh5 contrib'
 
 RUN sudo apt-get update	
 #RUN sudo apt-get install cloudera-manager-agent cloudera-manager-daemons
