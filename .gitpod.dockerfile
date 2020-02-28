@@ -31,16 +31,19 @@ RUN apt-get update && \
 	
 	
 	
-RUN wget https://archive.cloudera.com/cdh5/one-click-install/trusty/amd64/cdh5-repository_1.0_all.deb
-RUN sudo dpkg -i cdh5-repository_1.0_all.deb
-#RUN sudo apt-key add archive.key
+RUN sudo wget 'https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh/cloudera.list' \ -O /etc/apt/sources.list.d/cloudera.list
+RUN sudo wget https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh/archive.key -O archive.key 
+RUN sudo apt-key add archive.key
 #RUN sudo add-apt-repository 'deb https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh wheezy-cdh5 contribdeb-src https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh wheezy-cdh5 contrib'
 
-RUN sudo apt-get update	
+RUN sudo apt-get update
+#RUN sudo apt-get install hadoop-hdfs-namenode
+RUN sudo apt-get install hadoop-conf-pseudo
+
 #RUN sudo apt-get install cloudera-manager-agent cloudera-manager-daemons
 #RUN sudo systemctl start cloudera-scm-agent
 #RUN sleep 90
-RUN sudo apt-get install avro-tools bigtop-jsvc bigtop-utils flume-ng hadoop-hdfs-fuse hadoop-hdfs-nfs3 hadoop-httpfs hadoop-kms hbase hbase-solr hive-hbase hive-webhcat hue impala impala-shell kafka kite keytrustee-keyprovider kudu oozie parquet parquet-format pig search sentry sentry-hdfs-plugin solr solr-crunch solr-mapreduce spark-core spark-python sqoop zookeeper
+#RUN sudo apt-get install avro-tools bigtop-jsvc bigtop-utils flume-ng hadoop-hdfs-fuse hadoop-hdfs-nfs3 hadoop-httpfs hadoop-kms hbase hbase-solr hive-hbase hive-webhcat hue impala impala-shell kafka kite keytrustee-keyprovider kudu oozie parquet parquet-format pig search sentry sentry-hdfs-plugin solr solr-crunch solr-mapreduce spark-core spark-python sqoop zookeeper
 	
 	
 #RUN wget -qO - https://packages.confluent.io/deb/4.0/archive.key | sudo apt-key add -
