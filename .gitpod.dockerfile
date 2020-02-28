@@ -34,7 +34,7 @@ RUN apt-get update && \
 RUN wget https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh/archive.key
 RUN sudo apt-key add archive.key
 RUN sudo echo ”deb [arch=amd64] https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh xenial-cdh5 contrib” >> /etc/apt/sources.list
-	
+RUN sudo apt-get update	
 RUN sudo apt-get install cloudera-manager-agent cloudera-manager-daemons
 RUN sudo systemctl start cloudera-scm-agent
 #RUN sleep 90
