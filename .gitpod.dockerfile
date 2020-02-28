@@ -31,10 +31,10 @@ RUN apt-get update && \
 	
 	
 	
-RUN sudo wget -P /etc/apt/sources.list.d https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh/cloudera.list
+#RUN sudo wget -P /etc/apt/sources.list.d https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh/cloudera.list
 RUN sudo wget https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh/archive.key -O archive.key
 RUN sudo apt-key add archive.key
-#RUN sudo add-apt-repository 'deb https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh wheezy-cdh5 contribdeb-src https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh wheezy-cdh5 contrib'
+RUN sudo add-apt-repository 'deb [arch=amd64] https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh xenial-cdh5 contrib deb-src https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh xenial-cdh5 contrib'
 
 RUN sudo apt-get update
 RUN sudo apt-get install hadoop-yarn-resourcemanager
