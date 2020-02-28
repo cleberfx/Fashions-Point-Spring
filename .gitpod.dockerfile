@@ -31,10 +31,10 @@ RUN apt-get update && \
 	
 	
 	
-#RUN wget https://archive.cloudera.com/cm5/ubuntu/xenial/amd64/cm/archive.key
-#RUN sudo apt-key add archive.key
-#RUN sudo add-apt-repository 'deb [arch=amd64] https://archive.cloudera.com/cm5/ubuntu/xenial/amd64/cm xenial-cm5 contribdeb-src https://archive.cloudera.com/cm5/ubuntu/xenial/amd64/cm xenial-cm5 contrib'
-RUN sudo wget 'https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh/cloudera.list' -O /etc/apt/sources.list.d/cloudera.list
+RUN wget https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh/archive.key
+RUN sudo apt-key add archive.key
+RUN sudo add-apt-repository 'deb https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh wheezy-cdh5 contribdeb-src https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh wheezy-cdh5 contrib'
+
 RUN sudo apt-get update	
 #RUN sudo apt-get install cloudera-manager-agent cloudera-manager-daemons
 #RUN sudo systemctl start cloudera-scm-agent
