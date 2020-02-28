@@ -11,9 +11,13 @@ RUN apt-get update && apt-get install -y \
 	graphviz \
 	&& apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 	
+RUN wget https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh/archive.key
+RUN sudo apt-key add archive.key
+RUN sudo echo ”deb [arch=amd64] https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh xenial-cdh5 contrib” >> /etc/apt/sources.list
+	
 RUN sudo apt-get install cloudera-manager-agent cloudera-manager-daemons
 RUN sudo systemctl start cloudera-scm-agent
-RUN sleep 90
+#RUN sleep 90
 RUN sudo apt-get install avro-tools bigtop-jsvc bigtop-utils flume-ng hadoop-hdfs-fuse hadoop-hdfs-nfs3 hadoop-httpfs hadoop-kms hbase hbase-solr hive-hbase hive-webhcat hue impala impala-shell kafka kite keytrustee-keyprovider kudu oozie parquet parquet-format pig search sentry sentry-hdfs-plugin solr solr-crunch solr-mapreduce spark-core spark-python sqoop zookeeper
 	
 	
