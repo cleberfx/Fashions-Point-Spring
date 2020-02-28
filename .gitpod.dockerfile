@@ -31,12 +31,13 @@ RUN apt-get update && \
 	
 	
 	
-RUN wget https://archive.cloudera.com/cm5/ubuntu/xenial/amd64/cm/archive.key
-RUN sudo apt-key add archive.key
-RUN sudo add-apt-repository 'deb [arch=amd64] https://archive.cloudera.com/cm5/ubuntu/xenial/amd64/cm xenial-cm5 contribdeb-src https://archive.cloudera.com/cm5/ubuntu/xenial/amd64/cm xenial-cm5 contrib'
+#RUN wget https://archive.cloudera.com/cm5/ubuntu/xenial/amd64/cm/archive.key
+#RUN sudo apt-key add archive.key
+#RUN sudo add-apt-repository 'deb [arch=amd64] https://archive.cloudera.com/cm5/ubuntu/xenial/amd64/cm xenial-cm5 contribdeb-src https://archive.cloudera.com/cm5/ubuntu/xenial/amd64/cm xenial-cm5 contrib'
+RUN sudo wget 'https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh/cloudera.list' -O /etc/apt/sources.list.d/cloudera.list
 RUN sudo apt-get update	
-RUN sudo apt-get install cloudera-manager-agent cloudera-manager-daemons
-RUN sudo systemctl start cloudera-scm-agent
+#RUN sudo apt-get install cloudera-manager-agent cloudera-manager-daemons
+#RUN sudo systemctl start cloudera-scm-agent
 #RUN sleep 90
 RUN sudo apt-get install avro-tools bigtop-jsvc bigtop-utils flume-ng hadoop-hdfs-fuse hadoop-hdfs-nfs3 hadoop-httpfs hadoop-kms hbase hbase-solr hive-hbase hive-webhcat hue impala impala-shell kafka kite keytrustee-keyprovider kudu oozie parquet parquet-format pig search sentry sentry-hdfs-plugin solr solr-crunch solr-mapreduce spark-core spark-python sqoop zookeeper
 	
