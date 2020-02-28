@@ -31,14 +31,14 @@ RUN apt-get update && \
 	
 	
 	
-RUN sudo wget 'https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh/cloudera.list' \ -O /etc/apt/sources.list.d/cloudera.list
-RUN sudo wget https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh/archive.key -O archive.key 
+RUN sudo wget -P /etc/apt/sources.list.d https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh/cloudera.list
+RUN sudo wget https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh/archive.key 
 RUN sudo apt-key add archive.key
 #RUN sudo add-apt-repository 'deb https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh wheezy-cdh5 contribdeb-src https://archive.cloudera.com/cdh5/debian/wheezy/amd64/cdh wheezy-cdh5 contrib'
 
 RUN sudo apt-get update
-#RUN sudo apt-get install hadoop-hdfs-namenode
-RUN sudo apt-get install hadoop-conf-pseudo
+RUN sudo apt-get install hadoop-yarn-resourcemanager
+#RUN sudo apt-get install hadoop-conf-pseudo
 
 #RUN sudo apt-get install cloudera-manager-agent cloudera-manager-daemons
 #RUN sudo systemctl start cloudera-scm-agent
