@@ -11,6 +11,26 @@ RUN apt-get update && apt-get install -y \
 	graphviz \
 	&& apt-get clean && rm -rf /var/cache/apt/* && rm -rf /var/lib/apt/lists/* && rm -rf /tmp/*
 	
+RUN apt-get update && \
+	apt-get install -y openjdk-8-jdk && \
+	apt-get install -y ant && \
+	apt-get clean && \
+	rm -rf /var/lib/apt/lists/* && \
+	rm -rf /var/cache/oracle-jdk8-installer;
+	
+	RUN apt-get update && \
+	apt-get install -y ca-certificates-java && \
+	apt-get clean && \
+	update-ca-certificates -f && \
+	rm -rf /var/lib/apt/lists/* && \
+	rm -rf /var/cache/oracle-jdk8-installer;
+	
+	ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
+        RUN export JAVA_HOME	
+	
+	
+	
+	
 RUN wget https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh/archive.key
 RUN sudo apt-key add archive.key
 RUN sudo echo ”deb [arch=amd64] https://archive.cloudera.com/cdh5/ubuntu/xenial/amd64/cdh xenial-cdh5 contrib” >> /etc/apt/sources.list
