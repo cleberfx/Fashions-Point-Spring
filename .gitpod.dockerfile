@@ -60,4 +60,4 @@ USER gitpod
 
 # Give back control
 USER root
-RUN chmod -R 777 /etc
+#RUN chmod -R 777 /etc
